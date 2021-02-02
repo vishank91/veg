@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class=" col-md-12">
+                      {% for i in messages %}
+                        <h2 class="white">{{i}}</h2>
+                        {% endfor %}
+                    <h2>Update<strong class="white">Bank Details</strong></h2>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <form class="main_form" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <input class="form-control" placeholder="Account Number" type="text" name="accnumber" value="{{Member.accountNumber}}">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <input class="form-control" placeholder="IFSC CODE" type="text" name="ifsc" value="{{Member.ifscCode}}">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <input class="form-control" placeholder="Bank Name" type="text" name="bankname" value="{{Member.bankName}}">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <button class="send">Update</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="img-box">
+                            <figure><img src="{% static 'images/img.jpg'%}" alt="img" /></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+            </div>
+            </div>
+        </div>
+{% endblock %}

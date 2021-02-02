@@ -1,0 +1,194 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    <div class="yellow_bg">
+   <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2>Our Plans</h2>
+                  </div>
+               </div>
+            </div>
+          </div>
+</div>
+    <!-- section -->
+    <section class="resip_section">
+        <div class="container">
+            <div class="row">
+               
+<!--                <div class="col-md-12">-->
+<!--            <div class="owl-carousel owl-theme">-->
+
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs1.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Homemade</h3>-->
+<!--                        <h4><span class="theme_color">$</span>10</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs2.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Noodles</h3>-->
+<!--                        <h4><span class="theme_color">$</span>20</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs3.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Egg</h3>-->
+<!--                        <h4><span class="theme_color">$</span>30</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs4.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Sushi Dizzy</h3>-->
+<!--                        <h4><span class="theme_color">$</span>40</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs5.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>The Coffee Break</h3>-->
+<!--                        <h4><span class="theme_color">$</span>50</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs1.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Homemade</h3>-->
+<!--                        <h4><span class="theme_color">$</span>10</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs2.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Noodles</h3>-->
+<!--                        <h4><span class="theme_color">$</span>20</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs3.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Egg</h3>-->
+<!--                        <h4><span class="theme_color">$</span>30</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs4.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>Sushi Dizzy</h3>-->
+<!--                        <h4><span class="theme_color">$</span>40</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <div class="product_blog_img">-->
+<!--                        <img src="images/rs5.png" alt="#" />-->
+<!--                    </div>-->
+<!--                    <div class="product_blog_cont">-->
+<!--                        <h3>The Coffee Break</h3>-->
+<!--                        <h4><span class="theme_color">$</span>50</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+                <style>
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  color: white;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #e60b92;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+</style>
+
+{% for i in Data %}
+<div class="columns">
+  <ul class="price">
+    <li class="header">{{i.name}}</li>
+    <li class="grey">Rs {{i.price}}</li>
+    <li>{{i.payoutNormal}} Rs/Day for {{i.normalDays}} Days</li>
+    <li>Boosting Time 7 Days</li>
+    <li>After Boost</li>
+    <li>{{i.payoutBoosted}} Rs/Day for {{i.boostedDays}} Days</li>
+      <li>5% Maching Income</li>
+    <li class="grey"><a href="/register/{{i.pid}}" class="button">Register</a></li>
+  </ul>
+</div>
+{% endfor %}
+
+        </div>
+        </div>
+    </section>
+
+{% endblock %}
